@@ -2,7 +2,7 @@ Builds a lightweight image
 ## Overview
 Docker 官方提供了简便的多阶段构建，可以使生产的镜像更小。
 
-### Use Single Build
+## Use Single Build
 
 #### Dockerfile文件
 
@@ -36,7 +36,7 @@ make build-image
 lqshow/golang-single-build                           46c1a7e                                      2850ca8700d9        23 seconds ago      355MB
 ```
 
-### Use multi-stage builds
+## Use multi-stage builds
 
 多阶段构建，允许在一个 Dockfile 文件里使用多个 FROM 语句，每个 FROM都有自己的 base image。
 通常情况下一个是构建时镜像，另外一个是运行时镜像。
@@ -76,7 +76,7 @@ make multi-stage-build-image
 lqshow/golang-multi-stage-build                            46c1a7e                                      24a8db0afe36        23 seconds ago      13.6MB
 ```
 
-### References
+## References
 
 - [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [Create the smallest and secured golang docker image based on scratch](https://medium.com/@chemidy/create-the-smallest-and-secured-golang-docker-image-based-on-scratch-4752223b7324)

@@ -16,3 +16,6 @@ make run
 make build-image
 make run-container
 ```
+
+## References
+- [Building a Go Project](https://docs.travis-ci.com/user/languages/go/)

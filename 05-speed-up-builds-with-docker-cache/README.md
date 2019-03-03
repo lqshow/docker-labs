@@ -14,6 +14,7 @@ Speed up your builds with Docker Cache
 ### Node.js
 
 > 优先复制 package.json 和 package-lock.json 两个文件，安装所需要的依赖
+>
 > 只有当 package.json 文件重新更新之后，cache 才会失效，然后重新安装依赖
 
 ```dockerfile
@@ -37,6 +38,7 @@ CMD ["npm","start"]
 ### Python
 
 > 优先复制 requirements.txt 文件，安装所需要的依赖
+>
 > 只有当 requirements.txt 文件重新更新之后，cache 才会失效，然后重新安装依赖
 
 ```dockerfile
@@ -60,6 +62,7 @@ CMD [ "python", "server.py" ]
 ### Golang
 
 > 优先复制 go.mod 和 go.sum 两个文件，将所需要的依赖下载下来
+>
 > 只有当 mod 文件重新更新之后，cache 才会失效，然后重新 download
 
 ```dockerfile

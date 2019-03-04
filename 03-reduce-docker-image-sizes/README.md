@@ -62,19 +62,21 @@ RUN dd if=/dev/zero of=/tmp/foo/bar bs=1048576 count=100 && rm /tmp/foo/bar
 
 如果仅仅用于复制文件，请选择 `COPY` ，简单更有效。如果需要提取存档，需要使用 `ADD`。
 ```dockerfile
+# bad example
 # 比如将一个local 的包解压，通过 COPY 命令，执行如下，需要两步
 # 这里用 COPY，其实是个错误的选择
 WORKDIR /usr/java
 COPY resource/jdk1.8.0_77.tgz /usr/java/jdk1.8.0_77.tgz
 RUN tar -zxvf /usr/java/jdk1.8.0_77.tgz -C /usr/java
 
+# good example
 # 用 ADD 命令，一步到位
 ADD resource/jdk1.8.0_77.tgz /usr/java
 ```
 
 ## 减少不必要的安装工具
 
-Docker 镜像里只留下需要用到的，其他的无关联的包不应该打包到容器内。比如 vim 或者 curl 等，这些基本都是调试用的工具。
+Docker 镜像里只留下需要用到的，其他的无关联的包不应该打包到镜像内。比如 vim 或者 curl 等，这些基本都是调试用的工具。
 
 如果需要在容器内调试，可以准备一个开发环境 Dockerfile 和 一个生产环境的 Dockerfile。 
 

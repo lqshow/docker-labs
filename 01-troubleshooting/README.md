@@ -4,8 +4,7 @@
 
 CentOs
 ```dockerfile
-# Add credentials on build
-WORKDIR -p /root/.ssh
+# COPY credentials on build
 COPY resource/id_rsa /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa && \
       echo 'StrictHostKeyChecking no' >> /etc/ssh/ssh_config
@@ -16,9 +15,8 @@ RUN rm -rf /root/.ssh/
 ```
 Ubuntu
 ```dockerfile
-# Add credentials on build
-WORKDIR -p /root/.ssh
-Add resource/id_rsa /root/.ssh/id_rsa
+# COPY credentials on build
+COPY resource/id_rsa /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa && \
       echo "StrictHostKeyChecking no\nUserKnownHostsFile /dev/null" >> /root/.ssh/config
 

@@ -26,7 +26,7 @@ FROM ${BUILD_IMAGE}
 WORKDIR /project
 
 # Install app dependencies
-COPY package.json package-lock.json ./
+COPY ./package*.json ./
 RUN npm install --only=production && npm cache clean --force
 
 # Bundle app source

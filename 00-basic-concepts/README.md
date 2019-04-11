@@ -34,6 +34,15 @@ Docker 采用了标准的 C/S 架构，包括客户端和服务端
 
 镜像是分层的，AUFS(Advanced Union File System)，Dockerfile 中每运行一条 RUN 指令，镜像添加新的一层。
 
+##### 镜像名
+1. 仓库名/镜像名:标签
+2. 如果没指定任何标签，Docker 自动为镜像设置一个 latest 标签
+
+##### dangling镜像
+
+dangling 镜像就是 docker images 命令中出现的，REPOSITORY 和 TAG 都显示为 `<none>` 的镜像
+
+
 ### Container
 
 容器类似于一个轻量级的沙箱，Docker 利用容器来运行和隔离应用，容器是镜像的一个运行实例。

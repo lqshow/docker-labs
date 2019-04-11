@@ -1,11 +1,9 @@
 ## 创建启动容器
-> 检查本地是否存在centos镜像，不存在，链接官方，自动下载带本地宿机
-> 容器名是随机的
-> 如果不指定一个镜像的版本标签，例如你只使用centos，Docker将默认使用centos:latest镜像
-> 容器的命名必须是唯一的
-
 ```bash
 # 创建随机名容器，并运行 centos 的终端
+# 1. 检查本地是否存在centos镜像，不存在，链接到 docker hub，自动下载到本地宿机
+# 2. 如果不指定一个镜像的版本标签，如下只使用 centos，Docker 将默认使用 centos:latest 镜像
+# 3. 容器的命名必须是唯一的
 docker run -it centos /bin/bash
 
 # 创建一个名为test的容器

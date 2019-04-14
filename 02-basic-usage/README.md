@@ -1,8 +1,19 @@
-## Basic Usage
+# Basic Usage
 
-TBD
+## 如何设置容器默认时区
 
-## 如何在镜像内时区设置
+CentOS
+```dockerfile
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+```
+
+Ubuntu
+```dockerfile
+ENV TZ=Asia/Shanghai
+RUN echo $TZ > /etc/timezone && \
+    dpkg-reconfigure -f noninteractive tzdata
+```
 
 ## 如何在构建镜像时使用 SSH 私钥
 

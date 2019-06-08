@@ -10,7 +10,7 @@
 
 一般来说，我们希望按照从最不可能发生变化到最有可能发生变化的顺序来为镜像层排序，以针对推送和拉取操作优化镜像的大小。
 
-[参见：reduce docker image sizes ](../04-reduce-docker-image-sizes)
+[参见：reduce docker image sizes ](../../04-reduce-docker-image-sizes)
 
 ## Dockerfile
 

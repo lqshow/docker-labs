@@ -23,3 +23,9 @@ docker image prune
 # 删除无用的容器
 docker container prune
 ```
+
+### 查看节点容器运行情况
+
+```bash
+docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h
+```
